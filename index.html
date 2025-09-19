@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interior Design App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Left Pane: Design Controls -->
+        <div class="design-controls">
+            <h1>Interior Design Studio</h1>
+
+            <div class="control-group">
+                <h2>Lifestyle Theme</h2>
+                <div class="options-grid">
+                    <label><input type="radio" name="theme" value="South Indian"> South Indian</label>
+                    <label><input type="radio" name="theme" value="Classic"> Classic</label>
+                    <label><input type="radio" name="theme" value="North Indian"> North Indian</label>
+                    <label><input type="radio" name="theme" value="Minimalistic"> Minimalistic</label>
+                    <label><input type="radio" name="theme" value="Contemporary"> Contemporary</label>
+                    <label><input type="radio" name="theme" value="Mid Century Modern"> Mid Century Modern</label>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <h2>Room Type</h2>
+                <div class="options-grid">
+                    <label><input type="radio" name="room" value="Living Room"> Living Room</label>
+                    <label><input type="radio" name="room" value="Kitchen"> Kitchen</label>
+                    <label><input type="radio" name="room" value="Bathroom"> Bathroom</label>
+                    <label><input type="radio" name="room" value="Bedroom"> Bedroom</label>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <h2>Furniture Selection</h2>
+                <div class="options-grid">
+                    <label><input type="checkbox" name="furniture" value="Sofa"> Sofa</label>
+                    <label><input type="checkbox" name="furniture" value="Table"> Table</label>
+                    <label><input type="checkbox" name="furniture" value="Chair"> Chair</label>
+                    <label><input type="checkbox" name="furniture" value="Bed"> Bed</label>
+                    <label><input type="checkbox" name="furniture" value="Wardrobe"> Wardrobe</label>
+                    <label><input type="checkbox" name="furniture" value="Desk"> Desk</label>
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <button id="generate-image">Generate Design</button>
+                <button id="save-design">Save Design</button>
+                <button id="load-design">Load Design</button>
+            </div>
+        </div>
+
+        <!-- Right Pane: Image Display and Chat -->
+        <div class="display-section">
+            <div class="image-display">
+                <img id="design-image" src="https://via.placeholder.com/600x400?text=Your+Design+Here" alt="Generated Interior Design">
+                <div id="loading-overlay" class="loading-overlay">
+                    <div class="spinner"></div>
+                    <p>Generating your design...</p>
+                </div>
+            </div>
+            <div class="chat-interface">
+                <h2>AI Assistant</h2>
+                <div class="chat-window" id="chat-window">
+                    <!-- Chat messages will be appended here -->
+                    <div class="message ai-message">
+                        <p>Hello! How can I help you design your interior today?</p>
+                    </div>
+                </div>
+                <div class="chat-input">
+                    <input type="text" id="chat-input" placeholder="Ask for design advice...">
+                    <button id="send-chat">Send</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="app.js"></script>
+</body>
+</html>
